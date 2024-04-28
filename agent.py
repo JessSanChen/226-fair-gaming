@@ -7,6 +7,8 @@ class Agent:
         self.budget = self.sample_budget()
         self.cost_function = self.sample_cost_function()
         self.true_label = self.sample_true_label()
+        self.classification = None
+    
 
     def sample_features(self):
         if self.group == 'advantaged':
@@ -110,7 +112,16 @@ class Simulation:
             print(f"Current Regression Vector: {self.learner.regression_vector}")
             print(f"Accuracy: {self.learner.calculate_accuracy():.4f}\n")
 
-
+    def equal_opportunity_diff(self):
+        for agent in self.agents:
+            if agent.group == 'advantaged':
+                if agent.label == 1:
+                    
+            else:
+                if agent.label == 1:
+                    
+        return True
+        
 # Create and run the simulation
 true_parameter = np.array([0.5, -0.3])
 simulation = Simulation(num_agents=100, time_steps=50, true_parameter=true_parameter)

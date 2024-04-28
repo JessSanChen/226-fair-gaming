@@ -25,3 +25,7 @@ def run_ORC():
                                     metric_name="Equal opportunity difference",
                                     metric_ub=metric_ub, metric_lb=metric_lb)
     ROC = ROC.fit(dataset_orig_valid, dataset_orig_valid_pred)
+
+
+def check_equal_opportunity():
+    
