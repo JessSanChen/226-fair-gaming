@@ -29,3 +29,14 @@ metric_orig_train = BinaryLabelDatasetMetric(dataset_orig_train,
                                              privileged_groups=privileged_groups)
 display(Markdown("#### Original training dataset"))
 print("Difference in mean outcomes between unprivileged and privileged groups = %f" % metric_orig_train.mean_difference())
+
+RW = Reweighing(unprivileged_groups=unprivileged_groups,
+                privileged_groups=privileged_groups)
+dataset_transf_train = RW.fit_transform(dataset_orig_train)
+
+
+metric_transf_train = BinaryLabelDatasetMetric(dataset_transf_train, 
+                                               unprivileged_groups=unprivileged_groups,
+                                               privileged_groups=privileged_groups)
+display(Markdown("#### Transformed training dataset"))
+print("Difference in mean outcomes between unprivileged and privileged groups = %f" % metric_transf_train.mean_difference())
