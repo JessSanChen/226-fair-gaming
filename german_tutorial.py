@@ -34,7 +34,6 @@ RW = Reweighing(unprivileged_groups=unprivileged_groups,
                 privileged_groups=privileged_groups)
 dataset_transf_train = RW.fit_transform(dataset_orig_train)
 
-
 metric_transf_train = BinaryLabelDatasetMetric(dataset_transf_train, 
                                                unprivileged_groups=unprivileged_groups,
                                                privileged_groups=privileged_groups)
