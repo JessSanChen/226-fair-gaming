@@ -18,6 +18,8 @@ def compute_metrics(dataset_true, dataset_pred,
     metrics["Average odds difference"] = classified_metric_pred.average_odds_difference()
     metrics["Equal opportunity difference"] = classified_metric_pred.equal_opportunity_difference()
     metrics["Theil index"] = classified_metric_pred.theil_index()
+    metrics["Consistency (individual fairness)"] = classified_metric_pred.consistency()
+    metrics["Generalized entropy index (unified individual and group fairness)"] = classified_metric_pred.generalized_entropy_index()
     
     if disp:
         for k in metrics:
