@@ -21,8 +21,8 @@ def compute_metrics(dataset_true, dataset_pred,
     metrics["Consistency (individual fairness)"] = classified_metric_pred.consistency()
     metrics["Generalized entropy index (unified individual and group fairness)"] = classified_metric_pred.generalized_entropy_index()
     
-    if disp:
-        for k in metrics:
-            print("%s = %.4f" % (k, metrics[k]))
+    # if disp:
+    #     for k in metrics:
+    #         print("%s = %.4f" % (k, metrics[k]))
     
     return metrics
